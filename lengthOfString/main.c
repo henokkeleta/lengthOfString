@@ -10,7 +10,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-long int calcLen(char* const inPut);
+long int calcLen(const char* inPut);
 int i=0;
 int main(int argc, const char * argv[]) {
     
@@ -37,18 +37,17 @@ int main(int argc, const char * argv[]) {
     
     return 0;
 }
-long int calcLen(char* const pString)
+long int calcLen(const char* pString)
 {
     long int x=0;
-    int j=0;
+   
     const char *temp=NULL;
     temp=pString;
 
-    while(*temp!=0)
+    while(*temp)//while it derefferance null pointer it will jump out of the loop
     {
-        temp+=j;
-        j++;
-       
+        
+        ++temp;//incrementing till will reach the end of the string
     }
     x=temp-pString;
    return x;
